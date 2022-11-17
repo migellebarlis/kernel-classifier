@@ -3,3 +3,4 @@
 /env
 /src/kohler_dataset
 /src/sun_dataset
+__pycache__

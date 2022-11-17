@@ -1,9 +1,8 @@
-import os
 import tensorflow as tf
 from keras.preprocessing.image import ImageDataGenerator
 from FFT3 import FFT3
 
-TRAINING_DIR = os.path.join(os.getcwd(), 'src', 'training')
+TRAINING_DIR = 'src/training'
 training_datagen = ImageDataGenerator(rescale = 1./255)
 train_generator = training_datagen.flow_from_directory(
   TRAINING_DIR,
@@ -11,7 +10,7 @@ train_generator = training_datagen.flow_from_directory(
   class_mode = 'categorical'
 )
 
-VALIDATION_DIR = os.path.join(os.getcwd(), 'src', 'validation')
+VALIDATION_DIR = 'src/validation'
 validation_datagen = ImageDataGenerator(rescale = 1./255)
 validation_generator = validation_datagen.flow_from_directory(
   VALIDATION_DIR,
@@ -19,7 +18,7 @@ validation_generator = validation_datagen.flow_from_directory(
   class_mode = 'categorical'
 )
 
-TESTING_DIR = os.path.join(os.getcwd(), 'src', 'testing')
+TESTING_DIR = 'src/testing'
 testing_datagen = ImageDataGenerator(rescale = 1./255)
 testing_generator = testing_datagen.flow_from_directory(
   TESTING_DIR,
