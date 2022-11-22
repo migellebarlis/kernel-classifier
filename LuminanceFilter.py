@@ -12,7 +12,9 @@ class LuminanceFilter(Layer):
 
     def call(self, input_data):
         ycbcr = tfio.experimental.color.rgb_to_ycbcr(tf.cast(input_data, dtype=tf.uint8))
-        y = ycbcr[:, :, 0]
+        y = ycbcr[:, :, :, 0]
+        y = tf.reshape(y, (tf.shape(y)[0], tf.shape(y)[1], tf.shape(y)[2], 1))
+        y = tf.cast(y, dtype=tf.float32)
         return y
 
 
