@@ -16,7 +16,3 @@ class LuminanceFilter(Layer):
         y = tf.reshape(y, (tf.shape(y)[0], tf.shape(y)[1], tf.shape(y)[2], 1))
         y = tf.cast(y, dtype=tf.float32)
         return y
-
-
-if __name__ == '__main__':
-    print()
