@@ -11,3 +11,11 @@ class FFT2(Layer):
         fft = tf.signal.fftshift(tf.abs(tf.signal.fft2d(tf.cast(permute, dtype=tf.complex64))))
         permute = tf.transpose(fft, perm=[0, 2, 3, 1])
         return permute
+
+    def get_config(self):
+        config = super(FFT2, self).get_config()
+        return config
+
+    @classmethod
+    def from_config(cls, config):
+        return cls(**config)
