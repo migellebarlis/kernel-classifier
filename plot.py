@@ -4,7 +4,7 @@ import pickle
 from FFT2 import FFT2
 
 with tf.keras.utils.custom_object_scope({'FFT2': FFT2}):
-    with open('train.history','rb') as f:
+    with open('train.history', 'rb') as f:
         history = pickle.load(f)
 
 print(history.history.keys())
